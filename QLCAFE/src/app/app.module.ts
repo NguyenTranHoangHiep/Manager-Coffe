@@ -12,6 +12,7 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { BanComponent } from './ban/ban.component';
 import { TableService } from './service/table.service';
 import { DrinkComponent } from './drink/drink.component';
+import { ThongtinTKComponent } from './thongtin-tk/thongtin-tk.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { DrinkComponent } from './drink/drink.component';
     DangnhapComponent,
     TrangchuComponent,
     BanComponent,
-    DrinkComponent
+    DrinkComponent,
+    ThongtinTKComponent
   ],
   imports: [
     BrowserModule,
