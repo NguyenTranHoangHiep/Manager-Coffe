@@ -1,0 +1,94 @@
+<h2>Danh sách đồ uống</h2>
+<div class="search-drink-form">
+    <input type="text" [(ngModel)]="searchTenDoUong" placeholder="Nhập tên đồ uống cần tìm">
+    <button (click)="searchDrink()" style="background-color: blue; color: white;">Tìm đồ uống</button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Đồ Uống</th>
+            <th>Tên Đồ Uống</th>
+            <th>Loại Đồ Uống</th>
+            <th>Giá</th>
+            <th>Giá Bán</th>
+            <th>Hình ảnh</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let drink of foundDrinks">
+            <td>{{ drink.maDoUong }}</td>
+            <td>{{ drink.tenDoUong }}</td>
+            <td>{{ drink.loaiDoUong }}</td>
+            <td>{{ drink.Gia }}</td>
+            <td>{{ drink.GiaBan }}</td>
+            <td><img [src]="drink.imageUrl" width="100"></td>
+            <td>
+                <button (click)="deleteDrink(drink.id)" style="background-color: red; color: white;" class="btn-delete">Xóa</button>
+                <button (click)="editMode = true; setEditedDrink(drink)" class="btn-edit">Sửa</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="toggleAddForm()" style="background-color: #4CAF50; color: white;">Thêm Đồ Uống Mới</button>
+
+<!-- Biểu mẫu thêm đồ uống mới -->
+<form *ngIf="showAddForm" (submit)="addDrink()" style="position: absolute; top: 51px; left: 1088px;">
+    <div class="form-container">
+        <div class="form-group">
+            <label for="maDoUong">Mã Đồ Uống:</label>
+            <input type="text" id="maDoUong" name="maDoUong" [(ngModel)]="newDrink.maDoUong" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="tenDoUong">Tên Đồ Uống:</label>
+            <input type="text" id="tenDoUong" name="tenDoUong" [(ngModel)]="newDrink.tenDoUong" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="loaiDoUong">Loại Đồ Uống:</label>
+            <input type="text" id="loaiDoUong" name="loaiDoUong" [(ngModel)]="newDrink.loaiDoUong" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="gia">Giá:</label>
+            <input type="text" id="gia" name="gia" [(ngModel)]="newDrink.Gia" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="giaBan">Giá Bán:</label>
+            <input type="text" id="giaBan" name="giaBan" [(ngModel)]="newDrink.GiaBan" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">URL Hình ảnh:</label>
+            <input type="text" id="imageUrl" name="imageUrl" [(ngModel)]="newDrink.imageUrl" class="form-control">
+        </div>
+        <button type="submit" style="background-color: #4CAF50; color: white;">Thêm Đồ Uống</button>
+    </div>
+</form>
+
+<!-- Biểu mẫu cập nhật thông tin đồ uống -->
+<form *ngIf="editMode" (submit)="updateDrink()" style="position: absolute; top: 51px; left: 1088px;">
+    <div class="form-container">
+        <div class="form-group">
+            <label for="edit-maDoUong">Mã Đồ Uống:</label>
+            <input type="text" id="edit-maDoUong" name="edit-maDoUong" [(ngModel)]="newDrink.maDoUong" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label for="edit-tenDoUong">Tên Đồ Uống:</label>
+            <input type="text" id="edit-tenDoUong" name="edit-tenDoUong" [(ngModel)]="newDrink.tenDoUong" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="edit-loaiDoUong">Loại Đồ Uống:</label>
+            <input type="text" id="edit-loaiDoUong" name="edit-loaiDoUong" [(ngModel)]="newDrink.loaiDoUong" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="edit-gia">Giá:</label>
+            <input type="text" id="edit-gia" name="edit-gia" [(ngModel)]="newDrink.Gia" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="edit-giaBan">Giá Bán:</label>
+            <input type="text" id="edit-giaBan" name="edit-giaBan" [(ngModel)]="newDrink.GiaBan" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="edit-imageUrl">URL Hình ảnh:</label>
+            <input type="text" id="edit-imageUrl" name="edit-imageUrl" [(ngModel)]="newDrink.imageUrl" class="form-control">
+        </div>
+        <button type="submit" style="background-color: #4CAF50; color: white;">Cập Nhật</button>
+        <button type="button" (click)="cancelEdit()" style="background-color: red; color: white;">Hủy</button>

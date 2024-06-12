@@ -1,0 +1,71 @@
+<h2>Danh Sách Bàn</h2>
+
+<!-- Biểu mẫu tìm kiếm bàn -->
+<div class="search-table-form">
+  <input type="text" [(ngModel)]="searchSoban" placeholder="Nhập số bàn cần tìm">
+  <button (click)="searchTable()" style="background-color: blue; color: white;">Tìm Bàn</button>
+</div>
+
+<!-- Danh sách bàn -->
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Số Bàn</th>
+      <th>Khu Vực</th>
+      <th>Hành Động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let table of foundTables">
+      <td>{{ table.id }}</td>
+      <td>{{ table.soban }}</td>
+      <td>{{ table.khuvuc }}</td>
+      <td>
+        <button (click)="deleteTable(table.id)" class="btn-delete">Xóa</button>
+        <button (click)="editMode = true; setEditedTable(table)" class="btn-edit">Sửa</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="foundTables.length === 0 && searchSoban">
+  Không tìm thấy bàn với số bàn: {{ searchSoban }}
+</div>
+
+<!-- Nút "Thêm Bàn" -->
+<button (click)="showAddForm = !showAddForm" style="background-color: #4CAF50; color: white;">Thêm Bàn</button>
+
+<!-- Biểu mẫu thêm bàn mới -->
+<form *ngIf="showAddForm" (submit)="addTable()" class="add-table-form">
+  <div class="form-group">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" [(ngModel)]="newTable.id" required class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="soban">Số Bàn:</label>
+    <input type="text" id="soban" name="soban" [(ngModel)]="newTable.soban" required class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="khuvuc">Khu Vực:</label>
+    <input type="text" id="khuvuc" name="khuvuc" [(ngModel)]="newTable.khuvuc" required class="form-control">
+  </div>
+  <button type="submit" style="background-color: #4CAF50; color: white;">Thêm Bàn</button>
+</form>
+
+<!-- Biểu mẫu sửa thông tin bàn -->
+<form *ngIf="editMode" (submit)="updateTable()" class="edit-table-form">
+  <div class="form-group">
+    <label for="edit-id">ID:</label>
+    <input type="text" id="edit-id" name="edit-id" [(ngModel)]="editedTable.id" required class="form-control" readonly>
+  </div>
+  <div class="form-group">
+    <label for="edit-soban">Số Bàn:</label>
+    <input type="text" id="edit-soban" name="edit-soban" [(ngModel)]="editedTable.soban" required class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="edit-khuvuc">Khu Vực:</label>
+    <input type="text" id="edit-khuvuc" name="edit-khuvuc" [(ngModel)]="editedTable.khuvuc" required class="form-control">
+  </div>
+  <button type="submit" style="background-color: #4CAF50; color: white;">Cập Nhật</button>
+  <button type="button" (click)="cancelEdit()" style="background-color: red; color: white;">Hủy</button>
+</form>

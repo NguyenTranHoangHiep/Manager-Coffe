@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #007bff; /* Màu xanh */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .register-container {
+            background-color: #fff; /* Màu trắng */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 150%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2 class="text-center">Đăng ký</h2>
+        <form #stockForm="ngForm" (ngSubmit)="dangKy(stockForm)">
+            <div class="form-group">
+                <label for="tenTK">Tên Tài Khoản</label>
+                <input type="text" class="form-control" id="tenTK" placeholder="Nhập tên tài khoản" required [(ngModel)]="tenTK" name="tenTK">
+            </div>
+            <div class="form-group">
+                <label for="gioiTinh">Giới Tính</label>
+                <select class="form-control" id="gioiTinh" required [(ngModel)]="gioiTinh" name="gioiTinh">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="TK">Tài Khoản</label>
+                <input type="text" class="form-control" id="TK" placeholder="Nhập tài khoản" required [(ngModel)]="Tk" name="Tk">
+            </div>
+            <div class="form-group">
+                <label for="MK">Mật Khẩu</label>
+                <input type="password" class="form-control" id="MK" placeholder="Nhập mật khẩu" required [(ngModel)]="Mk" name="Mk">
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control" id="Email" placeholder="Nhập email" required [(ngModel)]="Email" name="Email">
+            </div>
+            <div class="form-group">
+                <label for="Phone">Số Điện Thoại</label>
+                <input type="text" class="form-control" id="Phone" placeholder="Nhập số điện thoại" required [(ngModel)]="Phone" name="Phone">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
