@@ -8,32 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./dangnhap.component.scss']
 })
 export class DangnhapComponent {
-  TK: string = '';
-  MK: string = '';
-  message:  string='';
-  constructor(private userService: UserService, private router: Router) {}
+  public username: string = '';
+  public password: string = '';
+  public message: string = '';
 
-  login() {
-    if (!this.TK || !this.MK) {
-      this.message = 'Tên tài khoản và mật khẩu không được để trống.';
-      return;
-    }
+  constructor(private userService: UserService, private router: Router) { }
 
-    this.userService.verifyLogin(this.TK, this.MK).subscribe(
-      (loggedIn: boolean) => {
-        if (loggedIn) {
-          // Đăng nhập thành công, chuyển hướng đến trang danh sách cổ phiếu
-          this.router.navigate(['/trangchu']);
-        } else {
-          // Đăng nhập không thành công, hiển thị thông báo lỗi
-          this.message = 'Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.';
-        }
-      },
-      (error: any) => {
-        // Xử lý lỗi nếu có
-        console.error('Lỗi khi đăng nhập:', error);
-        this.message = 'Đã xảy ra lỗi khi đăng nhập. Vui lòng thử lại sau.';
+  onLogin(): void {
+    this.userService.verifyLogin(this.username, this.password).subscribe(isValid => {
+      if (isValid) {
+        console.log('Đăng nhập thành công');
+        this.message = '';
+        // Navigate to another page or perform further actions after successful login
+        this.router.navigate(['/trangchu']); // Example route
+      } else {
+        this.message = 'Nhập sai tài khoản và mật khẩu';
       }
-    );
+    }, error => {
+      console.error('Error logging in', error);
+      this.message = 'Lỗi khi đăng nhập vui lòng thử lại vào lần khác';
+    });
   }
 }

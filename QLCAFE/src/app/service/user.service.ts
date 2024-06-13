@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private REST_API_SERVER = 'http://localhost:3000'; // Địa chỉ JSON Server
+  private REST_API_SERVER = 'http://localhost:3000'; // JSON Server address
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -16,41 +16,35 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public login(): Observable<any> {
-    const url = `${this.REST_API_SERVER}/thongtinTk`;
+  public login(username: string, password: string): Observable<any> {
+    const url = `${this.REST_API_SERVER}/thongtinTk?TK=${username}&MK=${password}`;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 
   public verifyLogin(username: string, password: string): Observable<boolean> {
     return new Observable<boolean>((observer) => {
-      // Gọi hàm login để kiểm tra thông tin đăng nhập
-      this.login().subscribe(
+      this.login(username, password).subscribe(
         (response: any) => {
-          const userInfo = response;
-          // Kiểm tra thông tin đăng nhập
-          if (username === userInfo.TK && password === userInfo.MK) {
-            // Nếu thông tin đăng nhập đúng, gửi kết quả true
-            observer.next(true);
+          const userInfo = response[0]; // Assuming the response is an array with one object
+          // Check if username and password match
+          if (userInfo && username === userInfo.TK && password === userInfo.MK) {
+            observer.next(true); // Send true if login is successful
           } else {
-            // Nếu thông tin đăng nhập không đúng, gửi kết quả false
-            observer.next(false);
+            observer.next(false); // Send false if login fails
           }
-          // Kết thúc Observable
-          observer.complete();
+          observer.complete(); // Complete the observable
         },
         (error: any) => {
-          // Xử lý lỗi nếu có
-          console.error('Lỗi khi đăng nhập:', error);
-          // Gửi thông báo lỗi đến observer
-          observer.error(error);
-          // Kết thúc Observable
-          observer.complete();
+          console.error('Error logging in:', error);
+          observer.error(error); // Handle error and pass it along
+          observer.complete(); // Complete the observable
         }
       );
     });
   }
+
   public dangKy(thongTinTK: any): Observable<any> {
     const url = `${this.REST_API_SERVER}/thongtinTk`;
     return this.httpClient.post<any>(url, thongTinTK, this.httpOptions);
-  } 
+  }
 }

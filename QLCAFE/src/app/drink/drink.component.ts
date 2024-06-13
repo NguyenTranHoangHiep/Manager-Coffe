@@ -12,8 +12,10 @@ export class DrinkComponent implements OnInit {
   newDrink: any = {};
   showAddForm: boolean = false;
   searchTenDoUong: string = '';
+  selectedCategory: string = ''; // Add selectedCategory property
   editMode: boolean = false;
   editedTable: any = {};
+
   constructor(private drinkService: DrinkService) { }
 
   ngOnInit(): void {
@@ -47,18 +49,11 @@ export class DrinkComponent implements OnInit {
   }
 
   searchDrink(): void {
-    if (this.searchTenDoUong) {
-      this.drinkService.searchDrink(this.searchTenDoUong).subscribe(
-        (data: any[]) => {
-          this.foundDrinks = data;
-        },
-        (error) => {
-          console.error('Error searching drink:', error);
-        }
-      );
-    } else {
-      this.foundDrinks = this.drinks;
-    }
+    this.foundDrinks = this.drinks.filter(drink => {
+      const matchesName = this.searchTenDoUong ? drink.tenDoUong.includes(this.searchTenDoUong) : true;
+      const matchesCategory = this.selectedCategory ? drink.loaiDoUong === this.selectedCategory : true;
+      return matchesName && matchesCategory;
+    });
   }
 
   deleteDrink(drinkId: string): void {
@@ -80,20 +75,20 @@ export class DrinkComponent implements OnInit {
 
   updateDrink(): void {
     if (this.newDrink.id) {
-        this.drinkService.editDoUong(this.newDrink.id, this.newDrink).subscribe(
-            (response: any) => {
-                console.log('Drink updated successfully:', response);
-                this.getDrinks();
-                this.editMode = false; // Tắt biểu mẫu chỉnh sửa sau khi cập nhật thành công
-            },
-            (error: any) => {
-                console.error('Error updating drink:', error);
-            }
-        );
+      this.drinkService.editDoUong(this.newDrink.id, this.newDrink).subscribe(
+        (response: any) => {
+          console.log('Drink updated successfully:', response);
+          this.getDrinks();
+          this.editMode = false; // Tắt biểu mẫu chỉnh sửa sau khi cập nhật thành công
+        },
+        (error: any) => {
+          console.error('Error updating drink:', error);
+        }
+      );
     } else {
-        console.error('Please provide all required information for the drink.');
+      console.error('Please provide all required information for the drink.');
     }
-}
+  }
 
   cancelEdit() {
     this.editMode = false;

@@ -2,7 +2,14 @@
 <div class="search-drink-form">
     <input type="text" [(ngModel)]="searchTenDoUong" placeholder="Nhập tên đồ uống cần tìm">
     <button (click)="searchDrink()" style="background-color: blue; color: white;">Tìm đồ uống</button>
+    <select [(ngModel)]="selectedCategory" (change)="searchDrink()" style="margin-left: 10px;">
+        <option value="">Tất cả</option>
+        <option value="Trà">Trà</option>
+        <option value="Cà phê">Cà phê</option>
+        <option value="Nước khác">Nước khác</option>
+    </select>
 </div>
+<div style="height: 500px; overflow-y: auto">
 <table class="table">
     <thead>
         <tr>
@@ -30,8 +37,8 @@
         </tr>
     </tbody>
 </table>
+</div>
 <button (click)="toggleAddForm()" style="background-color: #4CAF50; color: white;">Thêm Đồ Uống Mới</button>
-
 <!-- Biểu mẫu thêm đồ uống mới -->
 <form *ngIf="showAddForm" (submit)="addDrink()" style="position: absolute; top: 51px; left: 1088px;">
     <div class="form-container">
