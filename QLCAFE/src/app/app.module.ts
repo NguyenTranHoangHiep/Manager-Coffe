@@ -13,6 +13,7 @@ import { BanComponent } from './ban/ban.component';
 import { TableService } from './service/table.service';
 import { DrinkComponent } from './drink/drink.component';
 import { ThongtinTKComponent } from './thongtin-tk/thongtin-tk.component';
+import { HoadonComponent } from './hoadon/hoadon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { ThongtinTKComponent } from './thongtin-tk/thongtin-tk.component';
     TrangchuComponent,
     BanComponent,
     DrinkComponent,
-    ThongtinTKComponent
+    ThongtinTKComponent,
+    HoadonComponent
   ],
   imports: [
     BrowserModule,

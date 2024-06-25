@@ -39,22 +39,23 @@ export class BanComponent implements OnInit {
     if (this.newTable.id && this.newTable.soban && this.newTable.khuvuc) {
       this.tableService.addTable(this.newTable).subscribe(
         (response) => {
-          console.log('Table added successfully:', response);
-          // Sau khi thêm thành công, làm mới danh sách bàn và ẩn biểu mẫu
+          console.log('Thêm bàn thành công:', response);
           this.getTableData();
           this.showAddForm = false;
-          // Đặt lại giá trị của newTable để chuẩn bị cho việc thêm bàn tiếp theo
           this.newTable = {};
+          alert('Thêm bàn thành công!');
         },
         (error) => {
-          console.error('Error adding table:', error);
+          console.error('Lỗi khi thêm bàn:', error);
+          alert('Lỗi khi thêm bàn, vui lòng thử lại sau.');
         }
       );
     } else {
-      console.error('Please provide all required information for the new table.');
+      // Hiển thị alert yêu cầu cung cấp đầy đủ thông tin cho bàn mới
+      alert('Vui lòng cung cấp đầy đủ thông tin cho bàn mới. Các trường cần thiết: ID, Số bàn, Khu vực');
     }
   }
-
+  
   // Phương thức tìm kiếm bàn theo số bàn
   searchTable() {
     if (this.searchSoban) {
