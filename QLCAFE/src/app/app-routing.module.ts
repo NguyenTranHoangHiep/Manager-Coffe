@@ -6,6 +6,7 @@ import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { BanComponent } from './ban/ban.component';
 import { DrinkComponent } from './drink/drink.component';
 import { HoadonComponent } from './hoadon/hoadon.component';
+import { PopupComponent } from './popup/popup.component';
 
 const routes: Routes = [
   { path: 'dangky', component: DangkyComponent },
@@ -21,7 +22,9 @@ const routes: Routes = [
       { path: '', redirectTo: 'trangchu', pathMatch: 'full' } // Redirect to 'ban' by default under 'trangchu'
     ]
   },
-  { path: '', redirectTo: '/dangnhap', pathMatch: 'full' } // Default redirect to 'dangnhap'
+  { path: '', redirectTo: '/dangnhap', pathMatch: 'full' },
+  { path: 'popup', component: PopupComponent },
+  {path:'hoadon',component:HoadonComponent}
 ];
 
 @NgModule({

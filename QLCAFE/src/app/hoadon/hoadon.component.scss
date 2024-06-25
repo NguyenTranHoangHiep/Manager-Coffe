@@ -17,4 +17,61 @@
     transition: background-color 0.3s ease, border-color 0.3s ease;
     font-size:60px;
   }
+  /* CSS cho bảng */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* CSS cho các ô */
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* CSS cho hàng chẵn */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* CSS cho tiêu đề */
+th {
+  background-color: blue;
+  color: white;
+}
+.btn-delete {
+  background-color: #f44336; /* Màu đỏ */
+  color: white; /* Chữ màu trắng */
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f; /* Màu đỏ đậm hơn khi hover */
+}
+.btn-edit {
+  background-color: rgb(255, 238, 0); /* Màu đỏ */
+  color: white; /* Chữ màu trắng */
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn-delete:hover {
+  background-color: rgb(255, 238, 0);/* Màu đỏ đậm hơn khi hover */
+}
+
   

@@ -14,6 +14,7 @@ import { TableService } from './service/table.service';
 import { DrinkComponent } from './drink/drink.component';
 import { ThongtinTKComponent } from './thongtin-tk/thongtin-tk.component';
 import { HoadonComponent } from './hoadon/hoadon.component';
+import { PopupComponent } from './popup/popup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { HoadonComponent } from './hoadon/hoadon.component';
     BanComponent,
     DrinkComponent,
     ThongtinTKComponent,
-    HoadonComponent
+    HoadonComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

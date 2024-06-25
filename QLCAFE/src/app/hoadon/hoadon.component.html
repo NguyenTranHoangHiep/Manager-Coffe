@@ -1,3 +1,41 @@
-<button class="btn-add">+</button>
+<h2>Danh sách bill</h2>
 
+<div class="hoadon">
+  <table>
+    <thead>
+      <tr>
+        <th>Bill ID</th>
+        <th>Ngày lập</th>
+        <th>Số bàn</th>
+        <th>Items</th>
+        <th>Tổng tiền</th>
+        <th>Hình thức thanh toán</th>
+        <th>Trạng thái</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bill of bills">
+        <td>{{ bill.bill_id }}</td>
+        <td>{{ bill.date }}</td>
+        <td>{{ bill.table_number }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let item of bill.items">
+              {{ item.name }} - {{ item.quantity }} x {{ item.price_per_unit | currency:'VND' }}
+            </li>
+          </ul>
+        </td>
+        <td>{{ calculateTotalAmount(bill.items) | currency:'VND' }}</td>
+        <td>{{ bill.payment_method }}</td>
+        <td>{{ bill.trangthai ? 'Đã thanh toán' : 'Chưa thanh toán' }}</td>
+        <td>
+          <button style="background-color: red; color: white;" class="btn-delete">Xem</button>
+          <button class="btn-edit">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+  <button style="background-color: #4CAF50; color: white;">Thêm Bill</button>
+</div>
