@@ -8,7 +8,7 @@
       "MK": "321",
       "Email": "hiepvn4@gmail.com",
       "Phone": "0345802298",
-      "vaiTro": "Khách hàng",
+      "vaiTro": "Admin",
       "id": "4439"
     },
     {
@@ -19,7 +19,7 @@
       "MK": "654",
       "Email": "tranb@gmail.com",
       "Phone": "0987654321",
-      "vaiTro": "Khách hàng",
+      "vaiTro": "Nhân viên",
       "id": "eef8"
     },
     {
@@ -54,44 +54,48 @@
       "Email": "hoahe@gmail.com",
       "Phone": "0345802288",
       "vaiTro": "Khách hàng"
+    },
+    {
+      "id": "b7d9",
+      "maTK": "TK3",
+      "tenTK": "Trum duong top",
+      "gioiTinh": "Nam",
+      "Tk": "matuga1234",
+      "Mk": "1234",
+      "Email": "hiepvn10@gmail.com",
+      "Phone": "0345802299",
+      "vaiTro": "Khách hàng"
+    },
+    {
+      "id": "3df2",
+      "maTK": "TK3",
+      "tenTK": "Soloduongtop",
+      "gioiTinh": "Nam",
+      "Tk": "matuga1235",
+      "Mk": "1235678",
+      "Email": "hiepvn8@gmail.com",
+      "Phone": "0345802278",
+      "vaiTro": "Khách hàng"
     }
   ],
   "ban": [
-    {
-      "id": "1",
-      "soban": "23",
-      "khuvuc": "Hồ sinh thai"
-    },
     {
       "id": "7",
       "soban": "89",
       "khuvuc": "Hồ cá"
     },
     {
-      "id": "5",
-      "soban": "23",
-      "khuvuc": "Nhà sàn"
+      "id": "3",
+      "soban": "26",
+      "khuvuc": "Trong nhà"
+    },
+    {
+      "id": "2",
+      "khuvuc": "Hồ cá",
+      "soban": "23"
     }
   ],
   "douong": [
-    {
-      "maDoUong": "DU001",
-      "tenDoUong": "Cà phê sữa đá",
-      "loaiDoUong": "Cà phê",
-      "Gia": 25000,
-      "GiaBan": 30000,
-      "imageUrl": "https://product.hstatic.net/1000075078/product/1686716532_dd-suada_c180c6187e644babbac7019a2070231e.jpg",
-      "id": "64c2"
-    },
-    {
-      "maDoUong": "DU002",
-      "tenDoUong": "Trà đào",
-      "loaiDoUong": "Trà",
-      "Gia": 20000,
-      "GiaBan": 25000,
-      "imageUrl": "https://res.klook.com/image/upload/q_85/c_fill,w_750/v1596017380/blog/fdhbsx1x6tmyswssvb1v.jpg",
-      "id": "51e9"
-    },
     {
       "maDoUong": "DU003",
       "tenDoUong": "Sting",
@@ -118,6 +122,24 @@
       "Gia": "10000",
       "GiaBan": "15000",
       "imageUrl": "data:image/jpeg;base64,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"
+    },
+    {
+      "id": "64c2",
+      "maDoUong": "DU001",
+      "tenDoUong": "Cà phê sữa đá",
+      "loaiDoUong": "Cà phê",
+      "Gia": "25000",
+      "GiaBan": 30000,
+      "imageUrl": "https://product.hstatic.net/1000075078/product/1686716532_dd-suada_c180c6187e644babbac7019a2070231e.jpg"
+    },
+    {
+      "id": "f59f",
+      "maDoUong": "DU006",
+      "tenDoUong": "Lipton đá",
+      "loaiDoUong": "Trà",
+      "Gia": "25000",
+      "GiaBan": "32000",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXxT_E_fUPIxcp211GMLastxPJ40z0kPMQDQ&s"
     }
   ]
 }

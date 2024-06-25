@@ -22,7 +22,7 @@
       <td>{{ table.soban }}</td>
       <td>{{ table.khuvuc }}</td>
       <td>
-        <button (click)="deleteTable(table.id)" class="btn-delete">Xóa</button>
+        <button (click)="deleteTable(table.id)" style="background-color: red; color: white;" class="btn-delete">Xóa</button>
         <button (click)="editMode = true; setEditedTable(table)" class="btn-edit">Sửa</button>
       </td>
     </tr>
@@ -36,7 +36,7 @@
 <button (click)="showAddForm = !showAddForm" style="background-color: #4CAF50; color: white;">Thêm Bàn</button>
 
 <!-- Biểu mẫu thêm bàn mới -->
-<form *ngIf="showAddForm" (submit)="addTable()" class="add-table-form">
+<form *ngIf="showAddForm" (submit)="addTable()" style="position: absolute; top: 50px; left: 700px;">
   <div class="form-group">
     <label for="id">ID:</label>
     <input type="text" id="id" name="id" [(ngModel)]="newTable.id" required class="form-control">
@@ -47,8 +47,12 @@
   </div>
   <div class="form-group">
     <label for="khuvuc">Khu Vực:</label>
-    <input type="text" id="khuvuc" name="khuvuc" [(ngModel)]="newTable.khuvuc" required class="form-control">
-  </div>
+    <select id="khuvuc" name="khuvuc" [(ngModel)]="newTable.khuvuc" required class="form-control">
+      <option value="Trong nhà">Trong nhà</option>
+      <option value="Hồ cá">Hồ cá</option>
+      <option value="Ngoài trời">Ngoài trời</option>
+    </select>
+  </div>  
   <button type="submit" style="background-color: #4CAF50; color: white;">Thêm Bàn</button>
 </form>
 
@@ -63,9 +67,13 @@
     <input type="text" id="edit-soban" name="edit-soban" [(ngModel)]="editedTable.soban" required class="form-control">
   </div>
   <div class="form-group">
-    <label for="edit-khuvuc">Khu Vực:</label>
-    <input type="text" id="edit-khuvuc" name="edit-khuvuc" [(ngModel)]="editedTable.khuvuc" required class="form-control">
-  </div>
+    <label for="khuvuc">Khu Vực:</label>
+    <select id="khuvuc" name="khuvuc" [(ngModel)]="newTable.khuvuc" required class="form-control">
+      <option value="Trong nhà">Trong nhà</option>
+      <option value="Hồ cá">Hồ cá</option>
+      <option value="Ngoài trời">Ngoài trời</option>
+    </select>
+  </div>  
   <button type="submit" style="background-color: #4CAF50; color: white;">Cập Nhật</button>
   <button type="button" (click)="cancelEdit()" style="background-color: red; color: white;">Hủy</button>
 </form>

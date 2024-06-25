@@ -7,35 +7,6 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <style>
-        body {
-            background-color: #007bff; /* Màu xanh */
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-        }
-        .login-container {
-            background-color: #fff; /* Màu trắng */
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 150%;
-            max-width: 400px;
-        }
-        .input-container {
-            margin-bottom: 15px;
-        }
-        .box-id, .box-pass {
-            margin-bottom: 10px;
-        }
-        .box-id label, .box-pass label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-    </style>
 </head>
 <body>
     <div class="login-container">
@@ -48,6 +19,15 @@
           <div class="box-pass">
             <label for="in-pass">Mật khẩu</label>
             <input type="password" class="form-control" placeholder="Nhập mật khẩu" id="in-pass" [(ngModel)]="password" name="password">
+          </div>
+          <div class="box-pass">
+            <label for="in-role">Vai trò</label>
+            <select class="form-control" id="in-role" [(ngModel)]="vaiTro" name="role">
+              <option value="Admin">Admin</option>
+              <option value="Nhân viên">Nhân viên</option>
+              <option value="Khách hàng">Khách hàng</option>
+              <!-- Thêm các tùy chọn khác nếu cần -->
+            </select>
           </div>
           <button type="submit" (click)="onLogin()" class="btn btn-primary btn-block">Đăng nhập</button>
           <div class="text-center mt-3">

@@ -23,6 +23,18 @@ export class DrinkComponent implements OnInit {
   }
 
   addDrink(): void {
+    // Kiểm tra các trường bắt buộc
+    if (!this.newDrink.maDoUong || !this.newDrink.tenDoUong || !this.newDrink.loaiDoUong || !this.newDrink.Gia || !this.newDrink.GiaBan || !this.newDrink.imageUrl) {
+      alert('Vui lòng điền tất cả các trường bắt buộc.');
+      return;
+    }
+  
+    // Kiểm tra các giá trị không hợp lệ (ví dụ: giá không phải là số dương)
+    if (isNaN(this.newDrink.Gia) || isNaN(this.newDrink.GiaBan) || Number(this.newDrink.Gia) <= 0 || Number(this.newDrink.GiaBan) <= 0) {
+      alert('Vui lòng nhập giá hợp lệ.');
+      return;
+    }
+  
     if (this.editMode) {
       this.updateDrink();
     } else {
@@ -32,6 +44,7 @@ export class DrinkComponent implements OnInit {
       });
     }
   }
+  
 
   getDrinks(): void {
     this.drinkService.getDoUong().subscribe((data: any[]) => {

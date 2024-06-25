@@ -6,50 +6,11 @@
     <title>Bootstrap Sidebar</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .sidebar {
-            min-width: 250px;
-            max-width: 250px;
-            background-color: #007bff;
-            padding-top: 20px;
-            color: white;
-            overflow-y: auto;
-        }
-        .navbar-brand {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .nav-link {
-            color: white;
-            font-size: 1.2rem;
-            padding: 0.5rem 1rem;
-            transition: background-color 0.3s;
-            display: block; /* Đặt mỗi liên kết là một block để có thể căn chỉnh đầy đủ */
-        }
-        .nav-link svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            margin-right: 0.5rem;
-        }
-        .nav-link:hover {
-            background-color: #0056b3;
-        }
-        .active {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <!-- Sidebar -->
     <div class="sidebar d-flex flex-column flex-shrink-0 p-3">
-        <a href="#" class="navbar-brand">Menu</a>
+        <a href="#" class="navbar-brand" align-center>Menu</a>
         <ul class="nav nav-pills flex-column mb-auto">
             <li>
                 <a href="#" class="nav-link" routerLink="/trangchu/ban" routerLinkActive="active">
@@ -71,9 +32,6 @@
                     Đồ uống
                 </a>
             </li>
-            <!-- Thêm các mục khác nếu cần -->
-
-            <!-- Thêm các mục khác nếu cần -->
         </ul>
     </div>
 

@@ -16,14 +16,14 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public login(username: string, password: string): Observable<any> {
-    const url = `${this.REST_API_SERVER}/thongtinTk?TK=${username}&MK=${password}`;
+  public login(username: string, password: string, vaiTro: string): Observable<any> {
+    const url = `${this.REST_API_SERVER}/thongtinTk?TK=${username}&MK=${password}&vaiTro=${vaiTro}`;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 
-  public verifyLogin(username: string, password: string): Observable<boolean> {
+  public verifyLogin(username: string, password: string,vaiTro:string): Observable<boolean> {
     return new Observable<boolean>((observer) => {
-      this.login(username, password).subscribe(
+      this.login(username, password,vaiTro).subscribe(
         (response: any) => {
           const userInfo = response[0]; // Assuming the response is an array with one object
           // Check if username and password match
