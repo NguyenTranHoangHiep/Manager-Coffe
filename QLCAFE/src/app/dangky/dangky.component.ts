@@ -15,7 +15,7 @@ export class DangkyComponent {
   public Mk: string = ''; // Mật khẩu
   public Email: string = '';
   public Phone: string = '';
-  public vaiTro: string = 'Khách hàng'; // Đặt vai trò mặc định là 'Khách hàng'
+  public vaiTro: string = 'Nhân viên'; // Đặt vai trò mặc định là 'Khách hàng'
   public message: string = '';
   private count: number = 3; // Khởi tạo biến đếm với giá trị ban đầu là 1
 
@@ -59,6 +59,6 @@ export class DangkyComponent {
     this.Mk = '';
     this.Email = '';
     this.Phone = '';
-    this.vaiTro = 'Khách hàng';
+    this.vaiTro = 'Nhân viên';
   }
 }

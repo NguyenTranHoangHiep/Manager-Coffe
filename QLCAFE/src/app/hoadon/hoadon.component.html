@@ -1,6 +1,10 @@
 <h2>Danh sách bill</h2>
 
 <div class="hoadon">
+  <input type="text" placeholder="Nhập vào mã hóa đơn" [(ngModel)]="billId">
+  <button (click)="getBillById()" style="background-color: blue; color: white;">Tìm hóa đơn</button>
+</div>
+<div>
   <table>
     <thead>
       <tr>
@@ -9,6 +13,8 @@
         <th>Số bàn</th>
         <th>Items</th>
         <th>Tổng tiền</th>
+        <th>Tiền vốn</th>
+        <th>Tiền lời</th>
         <th>Hình thức thanh toán</th>
         <th>Trạng thái</th>
         <th>Hành động</th>
@@ -27,15 +33,14 @@
           </ul>
         </td>
         <td>{{ calculateTotalAmount(bill.items) | currency:'VND' }}</td>
+        <td>{{calculateTotalCost(bill.items)| currency:'VND'}}</td>
+        <td>{{ calculateProfit(bill.items) | currency:'VND' }}</td>
         <td>{{ bill.payment_method }}</td>
         <td>{{ bill.trangthai ? 'Đã thanh toán' : 'Chưa thanh toán' }}</td>
-        <td>
-          <button style="background-color: red; color: white;" class="btn-delete">Xem</button>
-          <button class="btn-edit">Xóa</button>
+        <td class="center-align">
+          <button class="btn-delete" (click)="onDeleteBill(bill.id)">Xóa</button>
         </td>
       </tr>
     </tbody>
   </table>
-
-  <button style="background-color: #4CAF50; color: white;">Thêm Bill</button>
 </div>

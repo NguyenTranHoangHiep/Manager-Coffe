@@ -1,0 +1,9 @@
+<div class="custom-div">
+    <br><h2 class="h2"> Top best seller</h2>
+    <br>
+    <ul>
+        <li *ngFor="let item of topSellingItems" class="chu">
+            {{ item.name }} - {{ item.quantity }}
+        </li>
+    </ul>
+</div>

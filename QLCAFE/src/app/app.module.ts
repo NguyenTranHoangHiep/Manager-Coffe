@@ -15,6 +15,8 @@ import { DrinkComponent } from './drink/drink.component';
 import { ThongtinTKComponent } from './thongtin-tk/thongtin-tk.component';
 import { HoadonComponent } from './hoadon/hoadon.component';
 import { PopupComponent } from './popup/popup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ThongkeComponent } from './thongke/thongke.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { PopupComponent } from './popup/popup.component';
     DrinkComponent,
     ThongtinTKComponent,
     HoadonComponent,
-    PopupComponent
+    PopupComponent,
+    ThongkeComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Số Bàn</th>
       <th>Khu Vực</th>
       <th>Hành Động</th>
@@ -18,7 +17,6 @@
   </thead>
   <tbody>
     <tr *ngFor="let table of foundTables">
-      <td>{{ table.id }}</td>
       <td>{{ table.soban }}</td>
       <td>{{ table.khuvuc }}</td>
       <td>
@@ -38,10 +36,6 @@
 <!-- Biểu mẫu thêm bàn mới -->
 <form *ngIf="showAddForm" (submit)="addTable()" style="position: absolute; top: 50px; left: 700px;">
   <div class="form-group">
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id" [(ngModel)]="newTable.id" required class="form-control">
-  </div>
-  <div class="form-group">
     <label for="soban">Số Bàn:</label>
     <input type="text" id="soban" name="soban" [(ngModel)]="newTable.soban" required class="form-control">
   </div>
@@ -58,18 +52,14 @@
 
 
 <!-- Biểu mẫu sửa thông tin bàn -->
-<form *ngIf="editMode" (submit)="updateTable()" class="edit-table-form">
-  <div class="form-group">
-    <label for="edit-id">ID:</label>
-    <input type="text" id="edit-id" name="edit-id" [(ngModel)]="editedTable.id" required class="form-control" readonly>
-  </div>
+<form *ngIf="editMode" (submit)="updateTable()" class="edit-table-form" style="position: absolute; top: 50px; left: 700px;">
   <div class="form-group">
     <label for="edit-soban">Số Bàn:</label>
     <input type="text" id="edit-soban" name="edit-soban" [(ngModel)]="editedTable.soban" required class="form-control">
   </div>
   <div class="form-group">
     <label for="khuvuc">Khu Vực:</label>
-    <select id="khuvuc" name="khuvuc" [(ngModel)]="newTable.khuvuc" required class="form-control">
+    <select id="khuvuc" name="khuvuc" [(ngModel)]="editedTable.khuvuc" required class="form-control">
       <option value="Trong nhà">Trong nhà</option>
       <option value="Hồ cá">Hồ cá</option>
       <option value="Ngoài trời">Ngoài trời</option>
@@ -78,3 +68,4 @@
   <button type="submit" style="background-color: #4CAF50; color: white;">Cập Nhật</button>
   <button type="button" (click)="cancelEdit()" style="background-color: red; color: white;">Hủy</button>
 </form>
+

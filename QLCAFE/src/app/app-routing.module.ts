@@ -7,6 +7,7 @@ import { BanComponent } from './ban/ban.component';
 import { DrinkComponent } from './drink/drink.component';
 import { HoadonComponent } from './hoadon/hoadon.component';
 import { PopupComponent } from './popup/popup.component';
+import { ThongkeComponent } from './thongke/thongke.component';
 
 const routes: Routes = [
   { path: 'dangky', component: DangkyComponent },
@@ -16,9 +17,9 @@ const routes: Routes = [
     component: TrangchuComponent,
     children: [
       { path: 'ban', component: BanComponent },
-      // Add other child routes here if needed
       {path:'drink',component:DrinkComponent},
       {path:'hoadon',component:HoadonComponent},
+      {path:'thongke',component:ThongkeComponent},
       { path: '', redirectTo: 'trangchu', pathMatch: 'full' } // Redirect to 'ban' by default under 'trangchu'
     ]
   },

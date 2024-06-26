@@ -36,7 +36,7 @@ export class BanComponent implements OnInit {
 
   // Phương thức để thêm một bàn mới
   addTable() {
-    if (this.newTable.id && this.newTable.soban && this.newTable.khuvuc) {
+    if (this.newTable.soban && this.newTable.khuvuc) {
       this.tableService.addTable(this.newTable).subscribe(
         (response) => {
           console.log('Thêm bàn thành công:', response);

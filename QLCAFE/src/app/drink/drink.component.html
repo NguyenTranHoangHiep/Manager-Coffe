@@ -24,11 +24,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let drink of foundDrinks">
-            <td>{{ drink.maDoUong }}</td>
-            <td>{{ drink.tenDoUong }}</td>
-            <td>{{ drink.loaiDoUong }}</td>
-            <td>{{ drink.Gia }}</td>
-            <td>{{ drink.GiaBan }}</td>
+            <td>{{ drink.maDoUong}}</td>
+            <td>{{ drink.tenDoUong}}</td>
+            <td>{{ drink.loaiDoUong}}</td>
+            <td>{{ drink.Gia | currency:'VND'}}</td>
+            <td>{{ drink.GiaBan | currency:'VND'}}</td>
             <td><img [src]="drink.imageUrl" width="100"></td>
             <td>
                 <button (click)="deleteDrink(drink.id)" style="background-color: red; color: white;" class="btn-delete">Xóa</button>
