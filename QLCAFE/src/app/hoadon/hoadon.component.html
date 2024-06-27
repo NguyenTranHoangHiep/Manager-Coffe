@@ -1,4 +1,4 @@
-<h2>Danh sách bill</h2>
+<h2>Danh sách hóa đơn</h2>
 
 <div class="hoadon">
   <input type="text" placeholder="Nhập vào mã hóa đơn" [(ngModel)]="billId">
@@ -8,10 +8,11 @@
   <table>
     <thead>
       <tr>
-        <th>Bill ID</th>
+        <th>Mã hóa đơn</th>
         <th>Ngày lập</th>
         <th>Số bàn</th>
-        <th>Items</th>
+        <th>Khu vực</th>
+        <th>Đồ uống</th>
         <th>Tổng tiền</th>
         <th>Tiền vốn</th>
         <th>Tiền lời</th>
@@ -25,6 +26,7 @@
         <td>{{ bill.bill_id }}</td>
         <td>{{ bill.date }}</td>
         <td>{{ bill.table_number }}</td>
+        <td>{{bill.khuvuc}}</td>
         <td>
           <ul>
             <li *ngFor="let item of bill.items">
@@ -43,4 +45,8 @@
       </tr>
     </tbody>
   </table>
+</div>
+<br>
+<div class="box">
+Tổng lợi nhuận: {{ calculateTotalProfit(bills) | currency:'VND'}}
 </div>

@@ -12,6 +12,7 @@ export class HoadonComponent implements OnInit {
   douongList: any[] = []; // Declare douongList variable
   billId: string = '';
   currentBill: any;
+  searchTerm: string = '';
   constructor(private router: Router, private billService: BillService) {}
 
   ngOnInit(): void {
@@ -47,16 +48,8 @@ export class HoadonComponent implements OnInit {
       bill.profit = this.calculateProfit(bill.items);
     });
   }
-
-  openPopup(): void {
-    // Example method to navigate to a popup route
-    this.router.navigate(['/popup']);
-  }
-
   viewDetails(bill: any): void {
-    // Handle viewing details of a bill
     console.log('View details of bill: ', bill);
-    // Implement actions such as opening a dialog or navigating to a detail page
   }
 
   calculateTotalAmount(items: any[]): number {
@@ -79,12 +72,19 @@ export class HoadonComponent implements OnInit {
         totalCost += item.quantity * drink.Gia;
       } else {
         totalAmount += item.quantity * item.price_per_unit;
-        totalCost += item.quantity * item.price_per_unit; // Handle case where drink is not found in douongList
+        totalCost += item.quantity * item.price_per_unit; 
       }
     });
     return totalAmount - totalCost;
   }
-
+  calculateTotalProfit(bills: any[]): number {
+    let totalProfit = 0;
+    bills.forEach(bill => {
+      const billProfit = this.calculateProfit(bill.items);
+      totalProfit += billProfit;
+    });
+    return totalProfit;
+  }
   calculateTotalCost(items: any[]): number {
     // Calculate total cost based on items in a bill
     let totalCost = 0;
@@ -98,7 +98,6 @@ export class HoadonComponent implements OnInit {
     });
     return totalCost;
   }
-
   onDeleteBill(id: string): void {
     // Delete a bill and refresh bills data
     if (confirm(`Bạn có muốn xóa bill này`)) {
@@ -130,4 +129,5 @@ export class HoadonComponent implements OnInit {
       }
     );
   }
+  
 }

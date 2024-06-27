@@ -20,7 +20,15 @@ export class UserService {
     const url = `${this.REST_API_SERVER}/thongtinTk?TK=${username}&MK=${password}&vaiTro=${vaiTro}`;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
-
+  getTaiKhoan(): Observable<any[]> {
+    return this.httpClient.get<any[]>(`${this.REST_API_SERVER}/thongtinTk`);
+  }
+  deleteTaiKhoan(id: string): Observable<any> {
+    return this.httpClient.delete<any>(`${this.REST_API_SERVER}/thongtinTk/${id}`);
+  }
+  updateTaiKhoan(id: string, updatedData: any): Observable<any> {
+    return this.httpClient.put<any>(`${this.REST_API_SERVER}/thongtinTk/${id}`, updatedData);
+  }
   public verifyLogin(username: string, password: string,vaiTro:string): Observable<boolean> {
     return new Observable<boolean>((observer) => {
       this.login(username, password,vaiTro).subscribe(

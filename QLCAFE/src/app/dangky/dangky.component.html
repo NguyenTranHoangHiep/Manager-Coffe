@@ -43,11 +43,15 @@
             </div>
             <div class="form-group">
                 <label for="TK">Tài Khoản</label>
-                <input type="text" class="form-control" id="TK" placeholder="Nhập tài khoản" required [(ngModel)]="Tk" name="Tk">
+                <input type="text" class="form-control" id="TK" placeholder="Nhập tài khoản" required [(ngModel)]="TK" name="Tk">
             </div>
             <div class="form-group">
-                <label for="MK">Mật Khẩu</label>
-                <input type="password" class="form-control" id="MK" placeholder="Nhập mật khẩu" required [(ngModel)]="Mk" name="Mk">
+                <label for="password">Mật Khẩu</label>
+                <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" required [(ngModel)]="MK" name="Mk">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Xác nhận mật khẩu</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu" required [(ngModel)]="confirmMk" name="confirmMk">
             </div>
             <div class="form-group">
                 <label for="Email">Email</label>

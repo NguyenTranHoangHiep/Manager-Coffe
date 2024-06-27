@@ -4,8 +4,8 @@
       "maTK": "TK2",
       "tenTK": "Nguyen Van A",
       "gioiTinh": "Nam",
-      "TK": "123",
-      "MK": "321",
+      "TK": "matuga123",
+      "MK": "123456789",
       "Email": "hiepvn4@gmail.com",
       "Phone": "0345802298",
       "vaiTro": "Admin",
@@ -13,80 +13,36 @@
     },
     {
       "maTK": "TK3",
-      "tenTK": "Tran Thi B",
+      "tenTK": "ba beo",
       "gioiTinh": "Nữ",
-      "TK": "456",
-      "MK": "654",
+      "TK": "matuga1234",
+      "MK": "123456789",
       "Email": "tranb@gmail.com",
       "Phone": "0987654321",
       "vaiTro": "Nhân viên",
       "id": "eef8"
     },
     {
-      "id": "14e7",
+      "id": "f999",
       "maTK": "TK3",
-      "tenTK": "123123213",
+      "tenTK": "Top yasuo",
       "gioiTinh": "Nam",
-      "Tk": "213131",
-      "Mk": "312313",
-      "Email": "123123",
-      "Phone": "21313213",
-      "vaiTro": "Khách hàng"
+      "TK": "jineruno",
+      "MK": "Nekolyly9523",
+      "Email": "hiepvn9@gmail.com",
+      "Phone": "0345802268",
+      "vaiTro": "Nhân viên"
     },
     {
-      "id": "d58f",
-      "maTK": "TK18",
-      "tenTK": "Tao là trùm",
-      "gioiTinh": "Nam",
-      "Tk": "sadasd",
-      "Mk": "asdasdsad",
-      "Email": "hiepvn7@gmail.com",
-      "Phone": "0938961498",
-      "vaiTro": "Khách hàng"
-    },
-    {
-      "id": "3280",
+      "id": "4428",
       "maTK": "TK3",
-      "tenTK": "hiep dep trai313",
-      "gioiTinh": "Nam",
-      "Tk": "213124124",
-      "Mk": "213123424",
-      "Email": "hoahe@gmail.com",
-      "Phone": "0345802288",
-      "vaiTro": "Khách hàng"
-    },
-    {
-      "id": "b7d9",
-      "maTK": "TK3",
-      "tenTK": "Trum duong top",
-      "gioiTinh": "Nam",
-      "Tk": "matuga1234",
-      "Mk": "1234",
-      "Email": "hiepvn10@gmail.com",
+      "tenTK": "312312",
+      "gioiTinh": "Nữ",
+      "TK": "112",
+      "MK": "123",
+      "Email": "heipvn5@gmial.com",
       "Phone": "0345802299",
-      "vaiTro": "Khách hàng"
-    },
-    {
-      "id": "3df2",
-      "maTK": "TK3",
-      "tenTK": "Soloduongtop",
-      "gioiTinh": "Nam",
-      "Tk": "matuga1235",
-      "Mk": "1235678",
-      "Email": "hiepvn8@gmail.com",
-      "Phone": "0345802278",
-      "vaiTro": "Khách hàng"
-    },
-    {
-      "id": "62a3",
-      "maTK": "TK3",
-      "tenTK": "trin poro",
-      "gioiTinh": "Nam",
-      "Tk": "matuga123456",
-      "Mk": "123",
-      "Email": "hiepvn100@gmail.com",
-      "Phone": "0345802295",
-      "vaiTro": "Khách hàng"
+      "vaiTro": "Nhân viên"
     }
   ],
   "ban": [
@@ -106,9 +62,9 @@
       "khuvuc": "Hồ cá"
     },
     {
-      "id": "a8ef",
-      "soban": "13",
-      "khuvuc": "Ngoài trời"
+      "id": "3cb9",
+      "soban": "26",
+      "khuvuc": "Hồ cá"
     }
   ],
   "douong": [
@@ -118,7 +74,7 @@
       "loaiDoUong": "Nước khác",
       "Gia": 35000,
       "GiaBan": 40000,
-      "imageUrl": "https://product.hstatic.net/1000301274/product/_10101026__sting_dau_320ml_sleek_lon_db0105ad0db044bb939c7e7b8791d3e6_1024x1024.png",
+      "imageUrl": "https://s.net.vn/oBEM",
       "id": "e4c0"
     },
     {
@@ -128,7 +84,7 @@
       "loaiDoUong": "Trà",
       "Gia": "15000",
       "GiaBan": "20000",
-      "imageUrl": "https://bizweb.dktcdn.net/100/421/036/files/cach-lam-tra-vai-thom-ngon-giai-nhiet-mua-he-4.jpg?v=1617091580018"
+      "imageUrl": "https://s.net.vn/FiRT"
     },
     {
       "id": "400c",
@@ -172,6 +128,7 @@
       "bill_id": "001",
       "date": "25-06-2024",
       "table_number": 89,
+      "khuvuc": "Hồ cá",
       "trangthai": true,
       "items": [
         {
@@ -194,6 +151,7 @@
       "bill_id": "002",
       "date": "25-06-2024",
       "table_number": 23,
+      "khuvuc": "Ngoài trời",
       "trangthai": true,
       "items": [
         {
@@ -205,11 +163,11 @@
         {
           "item_id": "DU005",
           "name": "Bò húc",
-          "quantity": 2,
+          "quantity": 3,
           "price_per_unit": 15000
         }
       ],
-      "payment_method": "credit card",
+      "payment_method": "Thẻ ngân hàng",
       "id": "6af9"
     }
   ]

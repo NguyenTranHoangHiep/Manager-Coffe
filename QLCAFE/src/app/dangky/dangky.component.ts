@@ -11,24 +11,30 @@ export class DangkyComponent {
   public maTK: string = '';
   public tenTK: string = '';
   public gioiTinh: string = '';
-  public Tk: string = ''; // Tài khoản
-  public Mk: string = ''; // Mật khẩu
+  public TK: string = ''; // Tài khoản
+  public MK: string = ''; // Mật khẩu
   public Email: string = '';
   public Phone: string = '';
   public vaiTro: string = 'Nhân viên'; // Đặt vai trò mặc định là 'Khách hàng'
   public message: string = '';
   private count: number = 3; // Khởi tạo biến đếm với giá trị ban đầu là 1
-
+  public confirmMk: string = '';
   constructor(private userService: UserService, private router: Router) {}
 
   dangKy(stockForm: any) {
-    if (stockForm.valid) { // Kiểm tra các trường cần thiết
+    if (stockForm.valid) {
+      // Kiểm tra mật khẩu và mật khẩu xác nhận
+      if (this.MK !== this.confirmMk) {
+        alert("Mật khẩu xác nhận không khớp");
+        return;
+      }
+
       const newUser = {
         maTK: 'TK' + this.count++, // Sử dụng biến đếm để tạo mã tài khoản duy nhất
         tenTK: this.tenTK,
         gioiTinh: this.gioiTinh,
-        Tk: this.Tk,
-        Mk: this.Mk,
+        TK: this.TK,
+        MK: this.MK,
         Email: this.Email,
         Phone: this.Phone,
         vaiTro: this.vaiTro
@@ -47,7 +53,7 @@ export class DangkyComponent {
       );
     } else {
       console.error('Form is in an invalid state!!');
-      this.message = "Vui lòng nhập đầy đủ các trường";
+      alert("Vui lòng nhập đầy đủ các trường");
     }
   }
 
@@ -55,8 +61,8 @@ export class DangkyComponent {
     this.maTK = '';
     this.tenTK = '';
     this.gioiTinh = '';
-    this.Tk = '';
-    this.Mk = '';
+    this.TK = '';
+    this.MK = '';
     this.Email = '';
     this.Phone = '';
     this.vaiTro = 'Nhân viên';

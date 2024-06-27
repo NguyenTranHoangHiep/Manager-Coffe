@@ -2,10 +2,20 @@
     position: absolute;
     left: 275px;
     top: 15px;
-    width: 608px;
+    width: 550px;
     height: 308px;
     background-color: green;
     border: 2px solid darkgreen; /* Viền màu xanh */
+    border-radius: 15px; /* Bo tròn các góc */
+}
+.custom-div1 {
+    position: absolute;
+    left: 917px;
+    top: 15px;
+    width: 550px;
+    height: 308px;
+    background-color: rgb(240, 240, 35);
+    border: 2px solid darkgoldenrod; /* Viền màu xanh */
     border-radius: 15px; /* Bo tròn các góc */
 }
 .h2{

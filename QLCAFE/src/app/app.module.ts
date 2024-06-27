@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DangkyComponent } from './dangky/dangky.component';
@@ -14,9 +13,10 @@ import { TableService } from './service/table.service';
 import { DrinkComponent } from './drink/drink.component';
 import { ThongtinTKComponent } from './thongtin-tk/thongtin-tk.component';
 import { HoadonComponent } from './hoadon/hoadon.component';
-import { PopupComponent } from './popup/popup.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ThongkeComponent } from './thongke/thongke.component';
+import { TaikhoanComponent } from './taikhoan/taikhoan.component';
+import { Trangchu1Component } from './trangchu1/trangchu1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +27,9 @@ import { ThongkeComponent } from './thongke/thongke.component';
     DrinkComponent,
     ThongtinTKComponent,
     HoadonComponent,
-    PopupComponent,
-    ThongkeComponent
+    ThongkeComponent,
+    TaikhoanComponent,
+    Trangchu1Component
   ],
   imports: [
     BrowserModule,

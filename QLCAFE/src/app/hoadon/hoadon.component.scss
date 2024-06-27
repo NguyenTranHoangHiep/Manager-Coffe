@@ -41,7 +41,7 @@ th {
   color: white;
 }
 .btn-delete {
-  background-color: #f44336; /* Màu đỏ */
+  background-color: #fa3729; /* Màu đỏ */
   color: white; /* Chữ màu trắng */
   border: none;
   padding: 5px 10px;
@@ -57,25 +57,17 @@ th {
 .btn-delete:hover {
   background-color: #d32f2f; /* Màu đỏ đậm hơn khi hover */
 }
-.btn-edit {
-  background-color: rgb(255, 238, 0); /* Màu đỏ */
-  color: white; /* Chữ màu trắng */
-  border: none;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 2px 1px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-.btn-delete:hover {
-  background-color: rgb(255, 238, 0);/* Màu đỏ đậm hơn khi hover */
-}
 .center-align {
   text-align: center;
 }
-
+.box{
+  background-color: rgb(61, 61, 231);
+  padding: 10px;
+  display: inline-block;
+  border: 2px solid black; 
+  border-radius: 8px; 
+  font-weight: bold;
+  color:white;
+}
 
   

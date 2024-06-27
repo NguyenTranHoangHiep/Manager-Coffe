@@ -1,0 +1,79 @@
+<div class="container">
+    <h2>Danh sách tài khoản</h2>
+    <table class="table-container">
+      <thead>
+        <tr>
+          <th>Mã Tài Khoản</th>
+          <th>Tên Tài Khoản</th>
+          <th>Giới Tính</th>
+          <th>Tài Khoản</th>
+          <th>Mật Khẩu</th>
+          <th>Email</th>
+          <th>Số Điện Thoại</th>
+          <th>Vai Trò</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let taiKhoan of taiKhoans">
+          <td>{{ taiKhoan.maTK }}</td>
+          <td>{{ taiKhoan.tenTK }}</td>
+          <td>{{ taiKhoan.gioiTinh }}</td>
+          <td>{{ taiKhoan.TK }}</td>
+          <td>{{ taiKhoan.MK }}</td>
+          <td>{{ taiKhoan.Email }}</td>
+          <td>{{ taiKhoan.Phone }}</td>
+          <td>{{ taiKhoan.vaiTro }}</td>
+          <td>
+            <button (click)="deleteTaiKhoan(taiKhoan.id)" class="btn-delete">Xóa</button>
+            <button (click)="editTaiKhoan(taiKhoan)" class="btn-edit">Sửa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Form sửa tài khoản -->
+    <div *ngIf="selectedTaiKhoan" class="edit-form">
+      <h3>Sửa Tài Khoản</h3>
+      <form (ngSubmit)="updateTaiKhoan()">
+        <div class="form-group">
+          <label for="maTK">Mã Tài Khoản</label>
+          <input type="text" class="form-control" id="maTK" [(ngModel)]="selectedTaiKhoan.maTK" name="maTK" readonly>
+        </div>
+        <div class="form-group">
+          <label for="tenTK">Tên Tài Khoản</label>
+          <input type="text" class="form-control" id="tenTK" [(ngModel)]="selectedTaiKhoan.tenTK" name="tenTK">
+        </div>
+        <div class="form-group">
+          <label for="gioiTinh">Giới Tính</label>
+          <input type="text" class="form-control" id="gioiTinh" [(ngModel)]="selectedTaiKhoan.gioiTinh" name="gioiTinh">
+        </div>
+        <div class="form-group">
+          <label for="Tk">Tài Khoản</label>
+          <input type="text" class="form-control" id="TK" [(ngModel)]="selectedTaiKhoan.Tk" name="TK">
+        </div>
+        <div class="form-group">
+          <label for="Mk">Mật Khẩu</label>
+          <input type="password" class="form-control" id="MK" [(ngModel)]="selectedTaiKhoan.Mk" name="MK">
+        </div>
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="email" class="form-control" id="Email" [(ngModel)]="selectedTaiKhoan.Email" name="Email">
+        </div>
+        <div class="form-group">
+          <label for="Phone">Số Điện Thoại</label>
+          <input type="text" class="form-control" id="Phone" [(ngModel)]="selectedTaiKhoan.Phone" name="Phone">
+        </div>
+        <div class="form-group">
+            <label for="vaiTro">Vai Trò</label>
+            <select class="form-control" id="vaiTro" [(ngModel)]="selectedTaiKhoan.vaiTro" name="vaiTro">
+              <option value="Nhân viên">Nhân viên</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+        <button type="submit" class="btn btn-success">Cập Nhật</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Hủy</button>
+      </form>
+    </div>
+  </div>
+  

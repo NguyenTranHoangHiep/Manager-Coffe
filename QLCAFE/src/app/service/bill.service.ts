@@ -10,16 +10,10 @@ export interface Item {
   price_per_unit: number;
 }
 
-export interface Bill {
-  bill_id: string;
-  date: string;
-  table_number: number;
-  trangthai: boolean;
-  items: Item[];
-  payment_method: string;
-  id: string;
+export interface Douong {
+  tenDoUong: string;
+  Gia: number;
 }
-
 @Injectable({
   providedIn: 'root'
 })
@@ -32,7 +26,7 @@ export class BillService {
       'Content-Type': 'application/json'
     })
   };
-
+  private douongList: Douong[] = [];
   constructor(private httpClient: HttpClient) {}
 
   getBills(): Observable<any[]> {

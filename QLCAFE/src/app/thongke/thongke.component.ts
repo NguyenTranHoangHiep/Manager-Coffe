@@ -7,12 +7,13 @@ import { BillService } from '../service/bill.service';
   styleUrls: ['./thongke.component.scss']
 })
 export class ThongkeComponent implements OnInit {
-  topSellingItems: any[] = []; // Khai báo mảng để lưu danh sách mặt hàng bán chạy nhất
+  topSellingItems: any[] = [];
+  totalProfit: number = 0;
 
   constructor(private billService: BillService) {}
 
   ngOnInit(): void {
-    this.billService.getTopSellingItems(3).subscribe(items => {
+    this.billService.getTopSellingItems(5).subscribe(items => {
       this.topSellingItems = items;
     });
   }

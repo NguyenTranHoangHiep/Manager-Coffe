@@ -19,11 +19,10 @@ export class DangnhapComponent {
       if (isValid) {
         console.log('Đăng nhập thành công');
         this.message = '';
-        // Navigate to another page or perform further actions after successful login
         if (this.vaiTro === 'Admin') {
-          this.router.navigate(['/trangchu']); // Redirect to homepage for Admin
+          this.router.navigate(['/trangchu']); 
         } else if (this.vaiTro === 'Nhân viên') {
-          this.router.navigate(['/nhanvien']); // Redirect to employee page for Nhân viên
+          this.router.navigate(['/trangchu1']); 
         } else {
           // Handle other roles if needed
           this.message = 'Vai trò không hợp lệ';
